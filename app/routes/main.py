@@ -62,7 +62,8 @@ def acceuil():
                               isAdmin=session["isAdmin"],
                               actes=actes,
                             )
-    else render_template(
+    else:
+      render_template(
                           "acceuil/acceuil.html",
                           username=session["user"]['email'],
                           isAdmin=session["isAdmin"],
