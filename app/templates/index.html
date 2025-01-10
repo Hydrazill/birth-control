@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block style %}{% endblock %}
+    <title>{% block title %}birth control{% endblock %}</title>
+</head>
+<body>
+    <div class='container'>
+        {% block content %}{% endblock %}
+        
+        <footer class="footer">
+            <p>&copy; 2024 Système de Gestion des Naissances, l0rd_9h057</p>
+        </footer>
+    </div>
+</body>
+</html>

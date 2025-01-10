@@ -1,0 +1,65 @@
+
+{% extends "index.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/styleR.css') }}">
+{% endblock %}
+
+{% block content %}
+    <form class="form" action='register' method='POST'>
+        <p class="title">Register </p>
+        <p class="message">Signup now and get full access to our app. </p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for categorie, message in messages %}
+                        <li class="{{ categorie }}"> {{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div class="flex">
+            <label>
+                <input class="input" type="text" name='firstname' placeholder="" required="">
+                <span>First name</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name='lastname' placeholder="" required="">
+                <span>Last name</span>
+            </label>
+        </div>  
+            
+        <label>
+            <input class="input" type="email" name='email' placeholder="" required="">
+            <span>E-mail</span>
+        </label> 
+
+        <label>
+            <input class="input" type="text" name='phonenumber' placeholder="" required="">
+            <span>Phone number</span>
+        </label>
+
+        <label>
+            <input class="input" type="text" name='address' placeholder="" required="">
+            <span>Address</span>
+        </label>
+
+        <label>
+            <select class='input' name='sexe' required=''>
+                <option value='homme'>Male</option>
+                <option value='femme'>Female</option>
+            </select>
+        </label>
+        
+        <label>
+            <input class="input" type="password" name='password' id='password' placeholder="" required="">
+            <span>Password</span>
+        </label>
+        <label>
+            <input class="input" type="password" name='cpassword' placeholder="" required="">
+            <span>Confirm password</span>
+        </label>
+        <button class="submit" id='submit'>Submit</button><p class="signin" name='signin'>Already have an acount ? <a href="{{ url_for('auth.auth_login') }}">Signin</a> </p>
+    </form>
+{% endblock %}

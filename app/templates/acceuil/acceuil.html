@@ -1,0 +1,178 @@
+
+
+{% extends "index.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acceuil/style1.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="container--1">
+    <div class="left">
+        <div class="up">
+            <p>Bienvenue, {% if isAdmin %}
+                                <small class="role">admin</small>
+                            {% else %}
+                                <small class="role">parent</small>
+                            {% endif %}</p>
+            <p class="username">{{ username }}</p>
+        </div>
+        {% if not isAdmin %}
+            <div class="middle">
+                Declarer
+            </div>
+        {% endif %}
+        <div class="down">
+            <a href="{{ url_for("main.main_logout") }}"> deconnexion </a>
+        </div>
+    </div>
+    <div class="right">
+        <div id="declaration">
+            <div class="container--2">
+                <div id='list'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Birth date</th>
+                                <th>Birth place</th>
+                                <th>Sexe</th>
+                                <th>Father name</th>
+                                <th>Mother name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for acte in actes %}
+                                <tr>
+                                    <td>{{ acte.firstname }}</td>
+                                    <td>{{ acte.lastname }}</td>
+                                    <td>{{ acte.birthdate }}</td>
+                                    <td>{{ acte.birthplace }}</td>
+                                    <td>{{ acte.sexe }}</td>
+                                    <td>{{ acte.namefather }}</td>
+                                    <td>{{ acte.namemother }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <form id='form' class="form" method="POST">
+                    <div class="form--1">
+                        <p class="message">Child's information. </p>
+                        <div class="flex">
+                            <label>
+                                <input class="input" type="text" name='firstname' placeholder="" required="">
+                                <span>First name</span>
+                            </label>
+                
+                            <label>
+                                <input class="input" type="text" name='lastname' placeholder="" required="">
+                                <span>Last name</span>
+                            </label>
+                        </div>
+                        <label>
+                            <input class="input" type="date" name='birthdate' placeholder="" required="">
+                            <span>Birth date</span>
+                        </label>
+                        <label>
+                            <input class="input" type="text" name='birthplace' placeholder="" required="">
+                            <span>Birth place</span>
+                        </label>
+                        <label>
+                            <select class='input' name='sexe' required=''>
+                                <option value='homme'>Male</option>
+                                <option value='femme'>Female</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form--1">
+                        <p class="message">Parents informations. </p>
+                        <label>
+                            <input class="input" type="text" name='namefather' placeholder="" required="">
+                            <span>Father name</span>
+                        </label>
+                        <div class="flex">
+                            <label>
+                                <input class="input" type="date" name='birthdatefather' placeholder="" required="">
+                                <span>Father birth date</span>
+                            </label>
+                
+                            <label>
+                                <input class="input" type="text" name='birthplacefather' placeholder="" required="">
+                                <span>Father birth place</span>
+                            </label>
+                        </div>
+                        <label>
+                            <input class="input" type="text" name='addressfather' placeholder="" required="">
+                            <span>Father address</span>
+                        </label>
+                        <label>
+                            <input class="input" type="text" name='professionfather' placeholder="" required="">
+                            <span>Father profession</span>
+                        </label>
+
+                        <label>
+                            <input class="input" type="text" name='namemother' placeholder="" required="">
+                            <span>Mother name</span>
+                        </label>
+                        <div class="flex">
+                            <label>
+                                <input class="input" type="date" name='birthdatemother' placeholder="" required="">
+                                <span>Mother birth date</span>
+                            </label>
+                
+                            <label>
+                                <input class="input" type="text" name='birthplacemother' placeholder="" required="">
+                                <span>Mother birth place</span>
+                            </label>
+                        </div>
+                        <label>
+                            <input class="input" type="text" name='addressmother' placeholder="" required="">
+                            <span>Mother address</span>
+                        </label>
+                        <label>
+                            <input class="input" type="text" name='professionmother' placeholder="" required="">
+                            <span>Mother profession</span>
+                        </label>
+                    </div>
+                    <button class="submit" name='declaration--form'>Declarer</button>
+                </form>
+            </div>
+        </div>
+        <div id="admin">
+            <div class="container--2">
+                <div id='list'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Birth date</th>
+                                <th>Birth place</th>
+                                <th>Sexe</th>
+                                <th>Father name</th>
+                                <th>Mother name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for acte in actes %}
+                                <tr>
+                                    <td>{{ acte.firstname }}</td>
+                                    <td>{{ acte.lastname }}</td>
+                                    <td>{{ acte.birthdate }}</td>
+                                    <td>{{ acte.birthplace }}</td>
+                                    <td>{{ acte.sexe }}</td>
+                                    <td>{{ acte.namefather }}</td>
+                                    <td>{{ acte.namemother }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/acceuil/script1.js') }}"></script>
+{% endblock %}

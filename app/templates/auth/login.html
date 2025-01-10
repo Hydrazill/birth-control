@@ -1,0 +1,33 @@
+
+
+{% extends "index.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/styleL.css') }}">
+{% endblock %}
+{% block content %}
+    <form class="form" method='POST'>
+        <p class="title">Login </p>
+        <p class="message">Signin now and access to our app. </p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for categorie, message in messages %}
+                        <li class="{{ categorie }}"> {{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <label>
+            <input class="input" type="text" name='username' placeholder="" required="">
+            <span>Email or fullname</span>
+        </label>
+        
+        <label>
+            <input class="input" type="password" name='password' placeholder="" required="">
+            <span>Password</span>
+        </label>
+        <button class="submit">Submit</button>
+        <p class="signup">Don't have an acount ? <a href="{{ url_for('auth.auth_register') }}">Register</a> </p>
+    </form>
+{% endblock %}

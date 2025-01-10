@@ -1,0 +1,247 @@
+
+.container--1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.322);
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+}
+
+.left {
+    width: 15%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background-color: black; /* rgba(3, 3, 175, 0.644); */
+    box-shadow: 1px 0px 5px 2px #fa0303 /* #fa0303 */;
+    overflow: hidden;
+}
+.left .up + .middle + .down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .up p {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    background: linear-gradient(#fa0303, black);
+}
+
+.left .up p small {
+    font-size: medium;
+    font-weight: 600;
+}
+
+.left .up .username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+}
+
+.left .middle {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 0px 5px 2px #fa0303;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .6s ease-in-out;
+}
+.left .middle:hover {
+    color: #fa0303;
+}
+
+.left .down a {
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(black, #fa0303);
+}
+
+.right {
+    width: 85%;
+    height: 100%;
+}
+
+.right #declaration {
+    height: 100%;
+    width: 100%;
+
+    display: none;
+
+    transition: .6s ease-in-out;
+}
+
+.right #admin {
+    height: 100%;
+    width: 100%;
+
+    display: none;
+
+    transition: .6s ease-in-out;
+}
+
+.container--2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.container--2 .form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    border-radius: 1rem;
+    width: 80%;
+    height: 80%;
+}
+
+.container--2 .form .form--1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.message {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+    
+.form label {
+    position: relative;
+    width: 100%;
+}
+    
+.form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+    
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+    
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+    
+.form label .input:focus + span, .form label .input:valid + span {
+    color: #fa0303;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+    
+.input {
+    font-size: medium;
+}
+
+.submit {
+    position: absolute;
+    bottom: 0;
+
+    outline: none;
+    font-size: 16px;
+    transform: .3s ease;
+    
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 0px 5px 2px #fa0303;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .6s ease-in-out;
+}
+    
+.submit:hover {
+    color: #fa0303;;
+}
+
+#list {
+    width: 80%;
+    height: 80%;
+    overflow: scroll;
+}
+#list table {
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px #fa0303;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+tr:hover {
+    background-color: #fa0303;
+}
