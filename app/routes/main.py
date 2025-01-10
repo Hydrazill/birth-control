@@ -55,17 +55,19 @@ def acceuil():
         for tmp in temp:
             if tmp.firstnamedeclareur == session['user']['firstname'] and tmp.lastnamedeclareur == session['user']['lastname']:
                 actes.append(tmp)
-    return render_template(
-                            "acceuil/acceuil.html",
-                            username=session["user"]['lastname'] + " " + {session["user"]['firstname'],
-                            isAdmin=session["isAdmin"],
-                            actes=actes,
-                        ) if not session["isAdmin"] else render_template(
-                                                                        "acceuil/acceuil.html",
-                                                                        username=session["user"]['email'],
-                                                                        isAdmin=session["isAdmin"],
-                                                                        actes=actes,
-                                                                    )
+    if not session["isAdmin"]:
+      return render_template(
+                              "acceuil/acceuil.html",
+                              username=session["user"]['lastname'] + " " + {session["user"]['firstname'],
+                              isAdmin=session["isAdmin"],
+                              actes=actes,
+                            )
+    else render_template(
+                          "acceuil/acceuil.html",
+                          username=session["user"]['email'],
+                          isAdmin=session["isAdmin"],
+                          actes=actes,
+                        )
 
 
     # fonction annexe
