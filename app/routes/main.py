@@ -63,7 +63,7 @@ def acceuil():
                               actes=actes,
                             )
     else:
-      render_template(
+      return render_template(
                           "acceuil/acceuil.html",
                           username=session["user"]['email'],
                           isAdmin=session["isAdmin"],
