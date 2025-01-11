@@ -24,8 +24,8 @@ def create_app():
         db='birthControl',  # replace with your database name
         host=app.config["MONGO_URI"],         # replace with your MongoDB host
         port=27017,               # replace with your MongoDB port if different
-        username='mongo' # 'l0rd_9h057', # add this if authentication is required
-        password='OZaPicRClcWHfwKTMIIOqAOGhMumMQvY' # '4NSZCNQDRyGi2IEw', # add this if authentication is required
+        username='mongo', # 'l0rd_9h057', # add this if authentication is required
+        password='OZaPicRClcWHfwKTMIIOqAOGhMumMQvY', # '4NSZCNQDRyGi2IEw', # add this if authentication is required
         alias='default'           # alias for the connection
     )
 
