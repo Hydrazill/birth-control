@@ -58,7 +58,7 @@ def acceuil():
     if not session["isAdmin"]:
       return render_template(
                               "acceuil/acceuil.html",
-                              username=session["user"]['lastname'] + " " + {session["user"]['firstname'],
+                              username=session["user"]['lastname'] + " " + session["user"]['firstname'],
                               isAdmin=session["isAdmin"],
                               actes=actes,
                             )
